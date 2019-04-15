@@ -352,7 +352,7 @@ namespace WindowsFormsApplication1
 
             cWs.get_Range("A1", columnName + (identifiers.Count + 1)).Value2 = excelArray;
 
-            cWb.SaveAs(path + "\\Test_Persion_Data_Collection.xls", XlFileFormat.xlWorkbookDefault, Type.Missing, Type.Missing, false, false, XlSaveAsAccessMode.xlNoChange, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
+            cWb.SaveAs(path + "\\Test_Person_Data_Collection.xls", XlFileFormat.xlWorkbookDefault, Type.Missing, Type.Missing, false, false, XlSaveAsAccessMode.xlNoChange, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
             GC.Collect();
             GC.WaitForPendingFinalizers();
 
