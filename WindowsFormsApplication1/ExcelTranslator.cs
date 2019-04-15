@@ -21,16 +21,20 @@ namespace WindowsFormsApplication1
         private Workbook wb;
         private Worksheet ws;
         private string[] headers = new string[] { "Systolic Pressure", "Diastolic Pressure", "Mean Pressure", "Heart rate", "Stroke Volume", "Left Ventricular Ejection Time", "Pulse Interval", "Maximum Slope", "Cardiac Output", "Total Peripheral Resistance Medical Unit", "Total Peripheral Resistance CGS" };
-        private string[] headerExpansion = new string[] { " (baseline->baseline)", " (cold water->cold water)", " (cold water->pain threshhold)", " (pain threshhold->cold water)" };
+        private string[] headerExpansion = new string[] { " (Baseline Beginn->Ende)", " (Kaltwasser Beginn->Ende)", " (Kaltwasser->Schmerzschwelle)", " (Schmerzschwelle->Kaltwasser)" };
 
         /// <summary>
-        /// Creates a list of all xls at the input Path. Also starts the excel Application.
+        /// Creates a list of all xls at the input Path. Also starts the excel Application and initializes the testPersionCollection.
         /// </summary>
         /// <param name="inputPath">The path where the excel files are</param>
         /// <returns>List of all xls files in folder</returns>
         public string[] getFileList(string inputPath)
         {
             exelApp = new Application();
+            for (int i = 0; i < testPersonCollection.Length; i++)
+            {
+                testPersonCollection[i] = new Dictionary<string, double[]>();
+            }
             return Directory.GetFiles(inputPath, "*.xls");
         }
 
@@ -53,10 +57,6 @@ namespace WindowsFormsApplication1
             wb.Close();
             Marshal.ReleaseComObject(wb);
 
-            for (int i = 0; i < testPersonCollection.Length; i++)
-            {
-                testPersonCollection[i] = new Dictionary<string, double[]>();
-            }
 
             // reading the identifier
             string id = excelArray[4, 1].ToString();
@@ -221,7 +221,7 @@ namespace WindowsFormsApplication1
                             {
                                 for (int i = 2; i < 13; i++)
                                 {
-                                    for (int j = blblst; j < blblend; j++)
+                                    for (int j = blblst; j <= blblend; j++)
                                     {
                                         meanValue += (double)excelArray[j, i];
                                     }
@@ -295,7 +295,7 @@ namespace WindowsFormsApplication1
         /// <param name="path">the path where the excelfile will be created at</param>
         public void createExcel(string path)
         {
-            string filename = path + "\\testCollection.xls";
+            string filename = path + "\\Test_Person_Collection.xls";
             if (File.Exists(filename))
             {
                 File.Delete(filename);

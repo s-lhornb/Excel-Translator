@@ -96,9 +96,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(13, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 13);
+            this.label1.Size = new System.Drawing.Size(101, 13);
             this.label1.TabIndex = 6;
-            this.label1.Text = "Excel Imput Address";
+            this.label1.Text = "Excel Input Address";
             // 
             // label2
             // 
