@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ExcelTranslator.interfaces.FileServices
+namespace ExcelTranslator.FileServices
 {
-    interface ICanWriteFile
+    interface ICanReadFile
     {
-        bool WriteFile(string path, object[] data);
+        object[,] ReadFile(string paht);
     }
 }

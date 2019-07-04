@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ExcelTranslator.classes.Elements;
+using ExcelTranslator.Elements;
 
-namespace ExcelTranslator.interfaces.DataAnalysis
+namespace ExcelTranslator.DataAnalysis
 {
     interface ICanBuildMarkerPairs
     {

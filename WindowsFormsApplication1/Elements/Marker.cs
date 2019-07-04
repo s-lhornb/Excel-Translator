@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ExcelTranslator.classes.Elements
+namespace ExcelTranslator.Elements
 {
     class Marker
     {

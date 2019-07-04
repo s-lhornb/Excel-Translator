@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ExcelTranslator.interfaces.Utilities;
+using ExcelTranslator.Utilities;
 
-namespace ExcelTranslator.classes.Utilities
+namespace ExcelTranslator.Utilities
 {
     class NumberToLetterTranslator : ICanTranslateNumbersToLetters
     {

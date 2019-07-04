@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ExcelTranslator.interfaces.FileServices
+namespace ExcelTranslator.FileServices
 {
-    interface ICanDeleteFile
+    interface ICanCreateFile
     {
-        bool DeleteFile(string path);
+        bool CreateFile(string path);
     }
 }

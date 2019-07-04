@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ExcelTranslator.interfaces.Utilities
+namespace ExcelTranslator.FileServices
 {
-    interface ICanFindIDInFileNames
+    interface ICanWriteFile
     {
-        string FindID(string path);
+        bool WriteFile(string path, object[] data);
     }
 }

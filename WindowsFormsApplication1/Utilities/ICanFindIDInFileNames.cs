@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ExcelTranslator.interfaces.FileServices
+namespace ExcelTranslator.Utilities
 {
-    interface ICanCreateFile
+    interface ICanFindIDInFileNames
     {
-        bool CreateFile(string path);
+        string FindID(string path);
     }
 }

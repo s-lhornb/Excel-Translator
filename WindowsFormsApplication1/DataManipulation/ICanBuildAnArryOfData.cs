@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ExcelTranslator.interfaces.Utilities
+namespace ExcelTranslator.DataManipulation
 {
-    interface ICanTranslateNumbersToLetters
+    interface ICanBuildAnArryOfData
     {
-        string TranslaNumber(int number);
+        object[] buildArray(List<T> data);
     }
 }
