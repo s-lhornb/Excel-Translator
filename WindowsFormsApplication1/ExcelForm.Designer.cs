@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApplication1
+﻿namespace ExcelTranslator
 {
     partial class ExcelForm
     {

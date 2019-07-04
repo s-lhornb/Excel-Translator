@@ -8,7 +8,7 @@ using Excel = Microsoft.Office.Interop.Excel;
 using System.IO;
 using System.Runtime.InteropServices;
 
-namespace WindowsFormsApplication1
+namespace ExcelTranslator
 {
     class ExcelTranslator
     {

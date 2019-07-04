@@ -7,8 +7,8 @@
     <ProjectGuid>{D200C4C3-CFDF-4E7F-8A83-F6401CE59938}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WindowsFormsApplication1</RootNamespace>
-    <AssemblyName>WindowsFormsApplication1</AssemblyName>
+    <RootNamespace>ExcelTranslator</RootNamespace>
+    <AssemblyName>ExcelTranslator</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -46,6 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="classes\Elements\Marker.cs" />
+    <Compile Include="classes\Utilities\IDinFileNameFinder.cs" />
+    <Compile Include="classes\Utilities\NumberToLetterTranslator.cs" />
     <Compile Include="ExcelTranslator.cs" />
     <Compile Include="ExcelForm.cs">
       <SubType>Form</SubType>
@@ -53,6 +56,17 @@
     <Compile Include="ExcelForm.Designer.cs">
       <DependentUpon>ExcelForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="interfaces\DataAnalysis\ICanBuildMarkerPairs.cs" />
+    <Compile Include="interfaces\DataAnalysis\ICanFindIDsInData.cs" />
+    <Compile Include="interfaces\DataManipulation\ICanBuildAnArryOfData.cs" />
+    <Compile Include="interfaces\DataManipulation\ICanBuildMeanValues.cs" />
+    <Compile Include="interfaces\FileServices\ICanCreateFiles.cs" />
+    <Compile Include="interfaces\FileServices\ICanDeleteFile.cs" />
+    <Compile Include="interfaces\FileServices\ICanReadFile.cs" />
+    <Compile Include="interfaces\FileServices\ICanWriteFile.cs" />
+    <Compile Include="interfaces\DataAnalysis\ICanFindMarkers.cs" />
+    <Compile Include="interfaces\Utilities\ICanFindIDInFileNames.cs" />
+    <Compile Include="interfaces\Utilities\ICanTranslateNumbersToLetters.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="ExcelForm.resx">
@@ -66,6 +80,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -108,6 +123,11 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="classes\DataAnalysis\" />
+    <Folder Include="classes\DataManipulation\" />
+    <Folder Include="classes\FileServices\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
